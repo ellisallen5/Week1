@@ -3,9 +3,9 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 export async function HelloHttp(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     context.log(`Http function processed request for url "${request.url}"`);
 
-    const name = request.query.get('name') || await request.text() || 'world';
+    const name = request.query.get('name') || await request.text() || 'worldtest';
 
-    return { body: `Hello, ${name}!` };
+    return { body: `Bye, ${name}!` };
 };
 
 app.http('HelloHttp', {
